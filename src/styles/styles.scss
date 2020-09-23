@@ -1,0 +1,105 @@
+$color-light: #EBEBEB;
+$color-blue-primary: #3683FF;
+$color-blue-secondary: #63D3C6;
+$color-red-primary: #FF8DE5;
+$color-red-secondary: #FF3E3E;
+$color-green-primary: #71EBAE;
+$color-green-secondary: #01D3C3;
+$color-yellow-primary: #FFED88;
+$color-yellow-secondary: #EA912A;
+$bg-dark: #1F1F1F;
+$bg-dark-secondary: #343434;
+
+$font-primary: 'Open Sans', sans-serif;
+
+$screen-xs: 480px;
+$screen-sm: 640px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+// Mixins
+@mixin gradient-text($angle, $color-primary, $color-secondary) {
+  color: $color-primary;
+  background: -webkit-linear-gradient($angle, $color-primary, $color-secondary);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display: inline-block;
+}
+
+// Styles
+body {
+  background: $bg-dark;
+}
+
+h1 {
+  @include gradient-text($angle: 30deg, $color-primary: $color-blue-primary, $color-secondary: $color-blue-secondary);
+  color: $color-light;
+  font-family: $font-primary;
+  font-size: 5.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+h2 {
+  color: $color-light;
+  font-family: $font-primary;
+  font-size: 1.75rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+
+  span {
+    &.red {
+      @include gradient-text($angle: 30deg, $color-primary: $color-red-primary, $color-secondary: $color-red-secondary);
+    }
+    &.green {
+      @include gradient-text($angle: 30deg, $color-primary: $color-green-primary, $color-secondary: $color-green-secondary);
+    }
+    &.yellow {
+      @include gradient-text($angle: 30deg, $color-primary: $color-yellow-primary, $color-secondary: $color-yellow-secondary);
+    }
+  }
+}
+
+p {
+  color: $color-light;
+  font-family: $font-primary;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 90vh;
+  background-image: url('../images/dots.png');
+  background-size: cover;
+}
+
+.container {
+  height: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.circle {
+  border-radius: 50%;
+  background-image: linear-gradient($bg-dark-secondary, $bg-dark);
+  // background-image: linear-gradient($color-blue-secondary, $bg-dark);
+  position: absolute;
+  height: 800px;
+  width: 800px;
+  top: -4rem;
+  bottom: 0;
+  z-index: 1;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+}
