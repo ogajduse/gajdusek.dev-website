@@ -1,6 +1,7 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faLinkedin, faGithub, faGitlab, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faBook } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import mojeId from '../images/mojeId.svg'
 import Layout from '../components/layout'
@@ -27,6 +28,7 @@ const Index = () => (
           <SocialIcon href="mailto:ondrej@gajdusek.dev" icon={faEnvelope} />
           <SocialIcon href="https://github.com/ogajduse" icon={faGithub} />
           <SocialIcon href="https://gitlab.com/ogajduse" icon={faGitlab} />
+          <SocialIcon href="https://docs.gajdusek.dev" icon={faBook} />
           <SocialIcon href="https://linkedin.com/in/ogajduse" icon={faLinkedin} />
           <SocialIcon href="https://twitter.com/ogajdusek" icon={faTwitter} />
           <SocialIcon href="https://instagram.com/gajond" icon={faInstagram} />

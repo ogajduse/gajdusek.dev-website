@@ -171,7 +171,6 @@ a {
   background-size: cover;
 
   @media screen and (min-width: $screen-md) {
-    height: 90vh;
     background-image: none;
   }
 }
@@ -219,10 +218,10 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: url('../images/dots-red.png'), url('../images/dots-blue.png'), url('../images/dots-yellow.png');
+  background-image: url('../images/dots-red2.png'), url('../images/dots-blue2.png'), url('../images/dots-yellow2.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-position: 60% 60%;
+  background-position: 80% 80%;
   z-index: 3;
 
   @media screen and (min-width: $screen-md) {
@@ -243,7 +242,7 @@ a {
   margin-top: 0.5rem;
   margin-right: 0.75rem;
   margin-left: 0.75rem;
-  margin-bottom: -0.5rem;
+  margin-bottom: 0.25rem;
 
   &:hover,
   &:focus {
