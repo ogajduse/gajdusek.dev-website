@@ -1,3 +1,4 @@
+$color-white: #FFF;
 $color-light: #EBEBEB;
 $color-blue-primary: #3683FF;
 $color-blue-secondary: #63D3C6;
@@ -27,6 +28,21 @@ $screen-xl: 1200px;
   display: inline-block;
 }
 
+@mixin icon-hover() {
+  filter: invert(47%) sepia(82%) saturate(230%) hue-rotate(87deg) brightness(94%) contrast(76%);
+  transition: all .4s linear;
+}
+
+// Animation
+@keyframes hue { 
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
 // Styles
 body {
   background: $bg-dark;
@@ -38,6 +54,7 @@ h1 {
   font-family: $font-primary;
   font-size: 5.5rem;
   font-weight: 800;
+  text-align: center;
   margin: 0;
 }
 
@@ -46,9 +63,12 @@ h2 {
   font-family: $font-primary;
   font-size: 1.75rem;
   font-weight: 300;
+  text-align: center;
   letter-spacing: 1px;
+  position: relative;
 
   span {
+    animation: hue 10s linear infinite;
     &.red {
       @include gradient-text($angle: 30deg, $color-primary: $color-red-primary, $color-secondary: $color-red-secondary);
     }
@@ -68,6 +88,19 @@ p {
   font-weight: 800;
   margin: 0;
 }
+
+a {
+  color: $color-light;
+  &.icon {
+    font-size: 2rem;
+    margin: 0 0.5rem;
+  
+    &:hover {
+      @include icon-hover();
+    }
+  }
+}
+
 
 .wrapper {
   width: 100%;
@@ -91,15 +124,33 @@ p {
 .circle {
   border-radius: 50%;
   background-image: linear-gradient($bg-dark-secondary, $bg-dark);
-  // background-image: linear-gradient($color-blue-secondary, $bg-dark);
   position: absolute;
-  height: 800px;
-  width: 800px;
+  height: 860px;
+  width: 860px;
   top: -4rem;
   bottom: 0;
   z-index: 1;
-  left:0;
-  right:0;
-  margin-left:auto;
-  margin-right:auto;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.social-icons-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.social-icons__img {
+  height: 2rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: -0.5rem;
+
+  &:hover {
+    @include icon-hover();
+  }
 }
