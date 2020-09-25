@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 type Props = {
   children: React.ReactNode
 }
 
 const Layout = ({ children }: Props) => {
-    const parallax = (e) => {
+    const parallax = e => {
         const elem = document.querySelector(".dots");
         let _w = window.innerWidth/2;
         let _h = window.innerHeight/2;
@@ -17,7 +17,10 @@ const Layout = ({ children }: Props) => {
         let x = `${_depth3}, ${_depth2}, ${_depth1}`;
         elem.style.backgroundPosition = x;
     }
-    document.addEventListener("mousemove", parallax);
+
+    React.useEffect(() => {
+      window.addEventListener("mousemove", parallax);
+    })
 
     return (
       <div className="wrapper">

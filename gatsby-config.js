@@ -32,7 +32,7 @@ module.exports = {
         background_color: `#343434`,
         theme_color: `#343434`,
         display: `minimal-ui`,
-        // icon: `src/images/icons/favicon96.png`,
+        icon: `src/images/favicon.png`,
       },
     },
     {
@@ -51,7 +51,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // trackingId: "UA-107062821-1",
+        trackingId: "UA-179027655-1",
       },
     },
   ],
