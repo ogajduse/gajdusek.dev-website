@@ -1,0 +1,50 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Install Gatsby
+        run: npm install -g gatsby
+      
+      - name: Build Gatsby website
+        run: gatsby build
+          
+      - name: FTP Deployer
+        uses: sand4rt/ftp-deployer@v0.9
+        with:
+          # FTP host URL like: ftp.host.com
+          host: ${{ secrets.FTP_HOST }}
+          # Ftp username
+          username: ${{ secrets.FTP_USERNAME }}
+          # Ftp password
+          password: ${{ secrets.FTP_PASSWORD }}
+          # The remote folder location of your FTP server
+          remote_folder: ${{ secrets.FTP_REMOTE_FOLDER }}
+          # The local folder location
+          local_folder: public
+          # Remove existing files inside FTP remote folder
+          cleanup: no # optional
+          # includes
+          #include: # optional
+          # exclude
+          #exclude: # optional
+          # passive
