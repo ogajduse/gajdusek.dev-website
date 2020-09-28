@@ -21,7 +21,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v1.4.3
 
@@ -30,9 +30,12 @@ jobs:
 
       - name: Install Gatsby
         run: npm install -g gatsby --no-save
-      
+
       - name: Build Gatsby website
         run: gatsby build
+
+      - name: Cleanup git repository before FTP deploy
+        run: git stash
           
       - name: FTP Deployer
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
