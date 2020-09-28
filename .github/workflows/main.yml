@@ -48,7 +48,7 @@ jobs:
           # The local folder location
           local_folder: public
           # Remove existing files inside FTP remote folder
-          cleanup: no # optional
+          cleanup: false # optional
           # includes
           #include: # optional
           # exclude
