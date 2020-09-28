@@ -29,7 +29,7 @@ jobs:
         uses: jaid/action-npm-install@v1.2.1
 
       - name: Install Gatsby
-        run: npm install -g gatsby
+        run: npm install -g gatsby --no-save
       
       - name: Build Gatsby website
         run: gatsby build
@@ -41,4 +41,4 @@ jobs:
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           # The local directory to copy
-          local-dir: public
+          local-dir: public/
