@@ -21,6 +21,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v1.4.3
+
+      - name: npm install
+        uses: jaid/action-npm-install@v1.2.1
 
       - name: Install Gatsby
         run: npm install -g gatsby
