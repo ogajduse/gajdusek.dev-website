@@ -35,22 +35,10 @@ jobs:
         run: gatsby build
           
       - name: FTP Deployer
-        uses: sand4rt/ftp-deployer@v0.9
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          # FTP host URL like: ftp.host.com
-          host: ${{ secrets.FTP_HOST }}
-          # Ftp username
-          username: ${{ secrets.FTP_USERNAME }}
-          # Ftp password
-          password: ${{ secrets.FTP_PASSWORD }}
-          # The remote folder location of your FTP server
-          remote_folder: ${{ secrets.FTP_REMOTE_FOLDER }}
-          # The local folder location
-          local_folder: public
-          # Remove existing files inside FTP remote folder
-          cleanup: false # optional
-          # includes
-          #include: # optional
-          # exclude
-          #exclude: # optional
-          # passive
+          ftp-server: ftp://${{ secrets.FTP_HOST }}:21/${{ secrets.FTP_REMOTE_FOLDER }}/
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          # The local directory to copy
+          local-dir: public
