@@ -1,0 +1,37 @@
+---
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v1.4.3
+
+      - name: npm install
+        uses: jaid/action-npm-install@v1.2.1
+
+      - name: Install Gatsby
+        run: npm install -g gatsby --no-save
+
+      - name: Build Gatsby website
+        run: gatsby build
+
+      - name: Cleanup git repository before FTP deploy
+        run: git stash
+
+      - name: FTP Deployer
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          # The local directory to copy
+          local-dir: public/
