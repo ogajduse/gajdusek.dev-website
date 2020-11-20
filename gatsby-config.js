@@ -26,7 +26,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `ondra-web`,
+        name: `gajdusek.dev-website`,
         short_name: `website`,
         start_url: `/`,
         background_color: `#343434`,

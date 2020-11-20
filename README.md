@@ -1,2 +1,2 @@
 # About
-Ondra personal website :).
+Ondrej Gajdusek's personal website :bowtie:.
