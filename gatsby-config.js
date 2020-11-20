@@ -36,14 +36,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Open Sans`,
-            subsets: [`latin-ext`],
-            variants: [`300`, `400`, `700`, `800`],
-          }
+          `Open Sans\:300,400,700,800`,
         ],
         display: 'swap'
       }
