@@ -2,8 +2,6 @@
 name: CI
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -15,17 +13,19 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v1.4.3
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
 
-      - name: npm install
+      - name: Install packages
         uses: jaid/action-npm-install@v1.2.1
 
-      - name: Run Prettier
-        run: prettier --check .
+      - name: Prettier
+        run: yarn run lint
 
       - name: Install Gatsby
-        run: npm install -g gatsby --no-save
+        run: yarn add global gatsby
 
       - name: Build Gatsby website
-        run: gatsby build
+        run: yarn run build
 
