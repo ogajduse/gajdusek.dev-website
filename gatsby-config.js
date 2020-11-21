@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-typescript`,
     {
-      resolve: "gatsby-plugin-sass",
+      resolve: 'gatsby-plugin-sass',
       options: {
         data: `@import "${__dirname}/src/styles/styles";`,
       },
