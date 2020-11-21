@@ -7,10 +7,10 @@ module.exports = {
   plugins: [
     `gatsby-plugin-typescript`,
     {
-      resolve: 'gatsby-plugin-sass',
+      resolve: "gatsby-plugin-sass",
       options: {
         data: `@import "${__dirname}/src/styles/styles";`,
-      }
+      },
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
@@ -38,11 +38,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Open Sans\:300,400,700,800`,
-        ],
-        display: 'swap'
-      }
+        fonts: [`Open Sans\:300,400,700,800`],
+        display: "swap",
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
