@@ -8,7 +8,7 @@ import {
   faGitlab,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons"
-import { faBook } from "@fortawesome/free-solid-svg-icons"
+import { faBook, faKey } from "@fortawesome/free-solid-svg-icons"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import mojeId from "../images/mojeid.svg"
@@ -52,6 +52,7 @@ const Index = () => (
       <a href="https://ogajdusek.mojeid.cz" target="_blank">
         <img src={mojeId} className="social-icons__img" alt="moje ID" />
       </a>
+      <SocialIcon href="./ogajduse.asc" icon={faKey} />
     </div>
   </Layout>
 )
