@@ -1,4 +1,5 @@
 import React from "react"
+import { config } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faInstagram,
@@ -9,10 +10,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import { faBook } from "@fortawesome/free-solid-svg-icons"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
+import "@fortawesome/fontawesome-svg-core/styles.css"
 import mojeId from "../images/mojeid.svg"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../styles/styles.scss"
+
+config.autoAddCss = false
 
 const SocialIcon = ({ href, icon }: { href: string; icon: any }) => (
   <a href={href} className="icon" target="_blank">
