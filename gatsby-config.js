@@ -8,9 +8,6 @@ module.exports = {
     `gatsby-plugin-typescript`,
     {
       resolve: "gatsby-plugin-sass",
-      options: {
-        data: `@import "${__dirname}/src/styles/styles";`,
-      },
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
