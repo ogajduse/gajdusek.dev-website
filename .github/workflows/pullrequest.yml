@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v1
         with:
-          node-version: '17'
+          node-version: '18'
 
       - name: Install packages
         uses: jaid/action-npm-install@v1.2.1
