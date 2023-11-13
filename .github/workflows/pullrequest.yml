@@ -18,7 +18,7 @@ jobs:
           node-version: '20'
 
       - name: Install packages
-        uses: jaid/action-npm-install@v1.2.1
+        uses: jaid/action-npm-install@v1.2.4
 
       - name: Prettier
         run: yarn run lint
