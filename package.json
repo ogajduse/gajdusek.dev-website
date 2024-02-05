@@ -39,7 +39,7 @@
   "devDependencies": {
     "depcheck": "^1.4.7",
     "npm-check": "^6.0.1",
-    "prettier": "^3.2.4"
+    "prettier": "^3.2.5"
   },
   "repository": {
     "type": "git",
