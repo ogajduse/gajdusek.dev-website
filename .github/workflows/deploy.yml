@@ -18,7 +18,7 @@ jobs:
           node-version: '20'
 
       - name: Install packages
-        uses: bahmutov/npm-install@v1.10.1
+        uses: bahmutov/npm-install@v1.10.2
 
       - name: Prettier
         run: yarn run lint
