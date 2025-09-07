@@ -27,16 +27,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: 'yarn'
 
       - name: Install packages
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Prettier
-        run: npm run lint
+        run: yarn run lint
 
       - name: Build Gatsby website
-        run: npm run build
+        run: yarn run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
